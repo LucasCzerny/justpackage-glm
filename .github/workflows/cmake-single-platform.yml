@@ -44,6 +44,10 @@ jobs:
         mkdir include/glm
         cp -r glm/* include/glm/
         zip -r just.zip lib include
+
+    - name: Set Release Date
+      id: set_release_date
+      run: echo "RELEASE_DATE=$(date +'%Y%m%d-%H%M%S')
     
     - name: Create Release
       id: create_release
