@@ -17,7 +17,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    
+
+    - name: Configure git committer identity
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
     - name: Pull latest changes from GLM repository
       run: |
         git remote add glm https://github.com/g-truc/glm.git
